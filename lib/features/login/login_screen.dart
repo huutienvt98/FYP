@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_scanner/components/input_field.dart';
 import 'package:food_scanner/components/space.dart';
 import 'package:food_scanner/const/colors/color_res.dart';
 import 'package:food_scanner/const/strings/string_res.dart';
-import 'package:food_scanner/features/home/home_screen.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 import '../../components/social_login.dart';
+import '../recipe/recipe_list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -64,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
                           }
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomeScreen()));
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecipeListScreen()));
                         },
                         style: ElevatedButton.styleFrom(
                             minimumSize: const Size.fromHeight(48.0), backgroundColor: ColorRes.primary),

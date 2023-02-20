@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_scanner/components/bottom_nav_bar.dart';
 import 'package:food_scanner/components/space.dart';
 import 'package:food_scanner/const/colors/color_res.dart';
 import 'package:food_scanner/domain/models/recipe_detail.dart';
@@ -20,6 +21,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(),
+      bottomNavigationBar: BottomNavBar(),
       body: Consumer<RecipeDetailViewModel>(
         builder: (context, watch, child) {
           final recipe = watch.recipe.value;

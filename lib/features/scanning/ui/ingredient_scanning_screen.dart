@@ -1,6 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:food_scanner/const/colors/color_res.dart';
 
+import '../../../components/bottom_nav_bar.dart';
 import 'display_picture_screen.dart';
 
 class IngredientScanningScreen extends StatefulWidget {
@@ -73,7 +75,10 @@ class _IngredientScanningScreenState extends State<IngredientScanningScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      appBar: AppBar(),
+      bottomNavigationBar: BottomNavBar(),
+      body: SizedBox(
+        width: double.maxFinite,
         child: FutureBuilder(
           future: _initializeControllerFuture,
           builder: (context, snapshot) {
@@ -87,6 +92,7 @@ class _IngredientScanningScreenState extends State<IngredientScanningScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: takePicture,
+        backgroundColor: ColorRes.primary,
         child: const Icon(Icons.camera_alt),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

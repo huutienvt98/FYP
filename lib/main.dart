@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_scanner/components/bottom_nav_bar_selected_index.dart';
 import 'package:food_scanner/const/colors/color_res.dart';
 import 'package:food_scanner/features/login/login_screen.dart';
 import 'package:food_scanner/features/recipe/recipe_detail_screen_vm.dart';
@@ -12,7 +13,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => IngredientListModel()),
-    ChangeNotifierProvider(create: (_) => RecipeDetailViewModel())
+    ChangeNotifierProvider(create: (_) => RecipeDetailViewModel()),
+    ChangeNotifierProvider(create: (_) => BottomNavBarIndex())
   ], child: const MyApp()));
 }
 

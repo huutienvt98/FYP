@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_scanner/components/bottom_nav_bar.dart';
 import 'package:food_scanner/components/space.dart';
 import 'package:food_scanner/domain/usecases/get_random_recipes_usecase.dart';
 import 'package:food_scanner/features/recipe/recipe_detail_screen.dart';
@@ -78,6 +79,8 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
+      bottomNavigationBar: BottomNavBar(),
       body: Padding(
         padding: const EdgeInsets.only(top: 16.0),
         child: FutureBuilder(

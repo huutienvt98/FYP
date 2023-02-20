@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:food_scanner/components/bottom_nav_bar.dart';
 import 'package:food_scanner/features/scanning/model/ingredient.dart';
 import 'package:food_scanner/features/scanning/ui/ingredient_screen.dart';
 import 'package:provider/provider.dart';
@@ -62,10 +63,11 @@ class DisplayPictureScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Display the Picture')),
+      appBar: AppBar(title: const Text('Review')),
+      bottomNavigationBar: BottomNavBar(),
       // The image is stored as a file on the device. Use the `Image.file`
       // constructor with the given path to display the image.
-      body: Image.file(File(imagePath)),
+      body: SafeArea(child: SizedBox(height: double.maxFinite, child: Image.file(File(imagePath)))),
       floatingActionButton: FloatingActionButton(
         onPressed: scanPicture,
         child: const Text("Scan"),
